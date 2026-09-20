@@ -1,0 +1,26 @@
+{
+  "name": "cse341-sanchez",
+  "version": "1.0.0",
+  "description": "CSE 341 Web Services",
+  "homepage": "https://github.com/san20022/cse341-sanchez#readme",
+  "bugs": {
+    "url": "https://github.com/san20022/cse341-sanchez/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/san20022/cse341-sanchez.git"
+  },
+  "license": "ISC",
+  "author": "Luis Sanchez Rojas",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
