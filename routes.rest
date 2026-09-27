@@ -4,3 +4,9 @@ GET http://localhost:3000/contacts
 
 ### Get single contact - Local
 GET http://localhost:3000/contacts/single?id=6ab6ed31c09217c32611811b
+### Get all contacts - Render
+GET https://cse341-sanchez.onrender.com/contacts
+
+
+### Get single contact - Render
+GET https://cse341-sanchez.onrender.com/contacts/single?id=6ab6ed31c09217c32611811b
