@@ -6,4 +6,10 @@ routes.get('/', contactsController.getAllContacts);
 
 routes.get('/single', contactsController.getSingleContact);
 
+routes.post('/', contactsController.createContact);
+
+routes.put('/:id', contactsController.updateContact);
+
+routes.delete('/:id', contactsController.deleteContact);
+
 module.exports = routes;

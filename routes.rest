@@ -12,3 +12,30 @@ GET https://cse341-sanchez.onrender.com/contacts
 
 ### Get single contact - Render
 GET https://cse341-sanchez.onrender.com/contacts/single?id=6ab6ed31c09217c32611811b
+
+### Create a new contact - Local
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Ashley",
+    "lastName": "Weaver",
+    "email": "ashley@example.com",
+    "favoriteColor": "blue",
+    "birthday": "1995-06-15"
+}
+
+### Update a contact - Local
+PUT http://localhost:3000/contacts/6ac18b0ce20ff2c9489887b0
+Content-Type: application/json
+
+{
+    "firstName": "Ashley",
+    "lastName": "Weaver",
+    "email": "ashley.updated@example.com",
+    "favoriteColor": "yellow",
+    "birthday": "1995-07-20"
+}
+
+### Delete a contact - Local
+DELETE http://localhost:3000/contacts/6ac18b0ce20ff2c9489887b0
