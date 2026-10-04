@@ -39,3 +39,32 @@ Content-Type: application/json
 
 ### Delete a contact - Local
 DELETE http://localhost:3000/contacts/6ac18b0ce20ff2c9489887b0
+
+### Create a new contact - Render
+POST https://cse341-sanchez.onrender.com/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Render",
+    "lastName": "Test",
+    "email": "render.test@example.com",
+    "favoriteColor": "green",
+    "birthday": "1990-01-01"
+}
+
+
+### Update a contact - Render
+PUT https://cse341-sanchez.onrender.com/contacts/6ac18b0ce20ff2c9489887b0
+Content-Type: application/json
+
+{
+    "firstName": "Render",
+    "lastName": "Updated",
+    "email": "render.updated@example.com",
+    "favoriteColor": "red",
+    "birthday": "1990-02-02"
+}
+
+
+### Delete a contact - Render
+DELETE https://cse341-sanchez.onrender.com/contacts/6ac18b0ce20ff2c9489887b0

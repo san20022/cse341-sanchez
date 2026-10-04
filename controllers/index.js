@@ -3,5 +3,5 @@ const awesomeFunction = (req, res) => {
 };
 
 module.exports = {
-    awesomeFunction
+    awesomeFunction,
 };

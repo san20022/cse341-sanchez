@@ -4,15 +4,14 @@ const { getDatabase } = require('../database');
 const getAllContacts = async (req, res) => {
     try {
         const database = getDatabase();
-        const contacts = await database
-            .collection('contacts')
-            .find()
-            .toArray();
+        const contacts = await database.collection('contacts').find().toArray();
 
         res.status(200).json(contacts);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'An error occurred while retrieving contacts.' });
+        res
+            .status(500)
+            .json({ error: 'An error occurred while retrieving contacts.' });
     }
 };
 
@@ -32,7 +31,9 @@ const getSingleContact = async (req, res) => {
         res.status(200).json(contact);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'An error occurred while retrieving the contact.' });
+        res
+            .status(500)
+            .json({ error: 'An error occurred while retrieving the contact.' });
     }
 };
 
@@ -45,20 +46,18 @@ const createContact = async (req, res) => {
             lastName: req.body.lastName,
             email: req.body.email,
             favoriteColor: req.body.favoriteColor,
-            birthday: req.body.birthday
+            birthday: req.body.birthday,
         };
 
-        const response = await database
-            .collection('contacts')
-            .insertOne(contact);
+        const response = await database.collection('contacts').insertOne(contact);
 
         res.status(201).json({
-            insertedId: response.insertedId
+            insertedId: response.insertedId,
         });
     } catch (error) {
         console.error(error);
         res.status(500).json({
-            error: 'An error occurred while creating the contact.'
+            error: 'An error occurred while creating the contact.',
         });
     }
 };
@@ -73,21 +72,18 @@ const updateContact = async (req, res) => {
             lastName: req.body.lastName,
             email: req.body.email,
             favoriteColor: req.body.favoriteColor,
-            birthday: req.body.birthday
+            birthday: req.body.birthday,
         };
 
         await database
             .collection('contacts')
-            .replaceOne(
-                { _id: new ObjectId(contactId) },
-                contact
-            );
+            .replaceOne({ _id: new ObjectId(contactId) }, contact);
 
         res.status(204).send();
     } catch (error) {
         console.error(error);
         res.status(500).json({
-            error: 'An error occurred while updating the contact.'
+            error: 'An error occurred while updating the contact.',
         });
     }
 };
@@ -97,19 +93,17 @@ const deleteContact = async (req, res) => {
         const database = getDatabase();
         const contactId = req.params.id;
 
-        await database
-            .collection('contacts')
-            .deleteOne({
-                _id: new ObjectId(contactId)
-            });
+        await database.collection('contacts').deleteOne({
+            _id: new ObjectId(contactId),
+        });
 
         res.status(200).json({
-            message: 'Contact deleted successfully.'
+            message: 'Contact deleted successfully.',
         });
     } catch (error) {
         console.error(error);
         res.status(500).json({
-            error: 'An error occurred while deleting the contact.'
+            error: 'An error occurred while deleting the contact.',
         });
     }
 };
@@ -119,5 +113,5 @@ module.exports = {
     getSingleContact,
     createContact,
     updateContact,
-    deleteContact
+    deleteContact,
 };

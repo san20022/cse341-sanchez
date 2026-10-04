@@ -19,5 +19,5 @@ const getDatabase = () => database;
 
 module.exports = {
     initDb,
-    getDatabase
+    getDatabase,
 };
