@@ -17,17 +17,20 @@
   "scripts": {
     "start": "nodemon server.js",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "swagger": "node swagger.js"
   },
   "dependencies": {
     "dotenv": "^18.0.4",
     "express": "^5.2.1",
-    "mongodb": "^7.6.0"
+    "mongodb": "^7.6.0",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.12.0",
     "nodemon": "^3.1.14",
-    "prettier": "^3.9.9"
+    "prettier": "^3.9.9",
+    "swagger-autogen": "^2.23.7"
   }
 }
